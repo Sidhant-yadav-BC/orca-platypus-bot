@@ -11,9 +11,9 @@ st.set_page_config(page_title="🐀💬Platypus perry Chatbot")
 # Replicate Credentials
 with st.sidebar:
     st.title('🐀💬Platypus perry Chatbot')
-    if os.getenv('REPLICATE_API_TOKEN') is not None:
+    if os.environ['REPLICATE_API_TOKEN'] is not None:
         st.success('API key already provided!', icon='✅')
-        replicate_api = os.getenv('REPLICATE_API_TOKEN')
+        replicate_api = os.environ['REPLICATE_API_TOKEN']
     else:
         replicate_api = st.text_input('Enter Replicate API token:', type='password')
         if not (replicate_api.startswith('r8_') and len(replicate_api)==40):
